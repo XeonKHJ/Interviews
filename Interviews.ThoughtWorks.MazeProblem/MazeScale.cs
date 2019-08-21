@@ -8,12 +8,12 @@ namespace Interviews.ThoughtWorks.MazeProblem
 {
     public struct MazeScale
     {
-        public Size MazeSize { set; get; }
+        public Size CellScale { set; get; }
 
         public Hashtable Connectivties { set; get; }
-        public MazeScale(Size mazeSize, Hashtable connectivities)
+        public MazeScale(Size cellScale, Hashtable connectivities)
         {
-            MazeSize = mazeSize;
+            CellScale = cellScale;
             Connectivties = connectivities;
         }
     }

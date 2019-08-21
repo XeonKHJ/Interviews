@@ -13,7 +13,6 @@ namespace Interviews.ThoughtWorks.MazeProblem
         {
             //先解析命令
             var scale = ParseCommandToMazeScale(command);
-
             return new Maze(scale);
         }
 
@@ -42,14 +41,14 @@ namespace Interviews.ThoughtWorks.MazeProblem
                 var maze1Cordinate = connetivityMatches[0].Value.Split(',');
                 var maze2Cordinate = connetivityMatches[1].Value.Split(',');
 
-                Cell cell1 = Cell.Create(new Point( int.Parse(maze1Cordinate[0]), int.Parse(maze1Cordinate[1])));
-                Cell cell2 = Cell.Create(new Point(int.Parse(maze2Cordinate[0]), int.Parse(maze2Cordinate[1])));
+                Point cell1Point = Cell.Create(new Point( int.Parse(maze1Cordinate[0]), int.Parse(maze1Cordinate[1]))).CentralPoint;
+                Point cell2Point = Cell.Create(new Point(int.Parse(maze2Cordinate[0]), int.Parse(maze2Cordinate[1]))).CentralPoint;
 
-                if(!connectivities.ContainsKey(cell1))
+                if(!connectivities.ContainsKey(cell1Point))
                 {
-                    connectivities[cell1] = new List<Cell>();
+                    connectivities[cell1Point] = new List<Point>();
                 }
-                ((List<Cell>)connectivities[cell1]).Add(cell2);
+                ((List<Point>)connectivities[cell1Point]).Add(cell2Point);
             }
 
             

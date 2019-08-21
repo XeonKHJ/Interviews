@@ -8,7 +8,9 @@ namespace Interviews
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            MazzFactory.Create("1 23 \n 3,4 0,2;0,0 1,0;0,1 1,1");
+            var maze = MazzFactory.Create("3 3 \n " +
+                               "0,1 0,2;0,0 1,0;0,1 1,1;0,2 1,2;1,0 1,1;1,1 1,2;1,1 2,1;1,2 2,2;2,0 2,1");
+            Console.WriteLine(maze.Render());
         }
     }
 }
